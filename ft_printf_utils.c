@@ -47,6 +47,6 @@ int	ft_putbase(long double arg, char c, int base)
 	}
 	if (arg >= base)
 		i += ft_putbase(arg / base, c, base);
-	i += write(1, &basex[(unsigned long)arg % base], 1);
+	i += write(1, &basex[(unsigned long long)arg % base], 1);
 	return (i);
 }
