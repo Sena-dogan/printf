@@ -19,26 +19,25 @@ int	ft_putchar(char c)
 
 int	ft_putstr(char *str)
 {
-	int	i;
+	int	x;
 
-	i = 0;
+	x = 0;
 	if (!str)
 		return (ft_putstr("(null)"));
-	while (str[i])
-		write(1, &str[i++], 1);
-	return (i);
+	x += write(1, str, ft_strlen(str));
+	return (x);
 }
 
 int	ft_putbase(long double arg, char c, int base)
 {
 	int		i;
-	char	*basex;
+	char	*xx;
 
 	i = 0;
 	if (c == 'X')
-		basex = "0123456789ABCDEF";
+		xx = "0123456789ABCDEF";
 	else
-		basex = "0123456789abcdef";
+		xx = "0123456789abcdef";
 	if (arg < 0)
 	{
 		arg = -arg;
@@ -47,6 +46,6 @@ int	ft_putbase(long double arg, char c, int base)
 	}
 	if (arg >= base)
 		i += ft_putbase(arg / base, c, base);
-	i += write(1, &basex[(unsigned long long)arg % base], 1);
+	i += write(1, &xx[(unsigned long long)arg % base], 1);
 	return (i);
 }
