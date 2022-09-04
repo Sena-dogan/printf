@@ -39,24 +39,24 @@ int	ft_control(char c, va_list ap)
 
 int	ft_printf(const char *str, ...)
 {
-	int		count;
+	int		x;
 	int		i;
 	va_list	ap;
 
 	i = 0;
-	count = 0;
+	x = 0;
 	va_start(ap, str);
-	while (str[count])
+	while (str[x])
 	{
-		if (str[count] == '%')
+		if (str[x] == '%')
 		{
-			i += ft_control(str[++count], ap);
-			count++;
+			i += ft_control(str[++x], ap);
+			x++;
 		}
 		else
 		{
-			i += ft_putchar(str[count]);
-			count++;
+			i += ft_putchar(str[x]);
+			x++;
 		}
 	}
 	return (i);
