@@ -30,7 +30,7 @@ int	ft_control(char c, va_list ap)
 	else if (c == 'p')
 	{
 		i += ft_putstr("0x");
-		i += ft_putbase(va_arg(ap, unsigned long int), c, 16);
+		i += ft_putbase(va_arg(ap, unsigned long long int), c, 16);
 	}
 	else if (c == '%')
 		i += ft_putchar('%');
